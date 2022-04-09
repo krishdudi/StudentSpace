@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
-import {Spinner, Container, Button, Form} from 'react-bootstrap';
-import Particle from '../Particle';
+import { Link, useNavigate } from 'react-router-dom';
+import {Spinner, Button, Form} from 'react-bootstrap';
 import {BASE_URL} from '../../Api';
-// import '../../style.css'
 import './login.css'
 
 const Login = () => {
@@ -22,7 +20,7 @@ const Login = () => {
         });
         setLoading(false);
         const json = await response.json();
-        console.log(json);
+        // console.log(json);
         if(json.status){
             //save the auth token and redirect
             localStorage.setItem('token', json.token);
@@ -54,7 +52,18 @@ const Login = () => {
                     </div>
                     
                     <Button type="submit" className="buton" >Log in</Button>
+                    {loading && (
+                                <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    margin: "15px 0",
+                                }}>
+                                <Spinner animation="border" />
+                                </div>
+                            )}
                 </Form>
+                <div className="last">Don't have an account? <Link to="/signup">Sign Up</Link></div>
         </div>
     </>
   )

@@ -87,7 +87,12 @@
     padding: 10px;
   }
   .buton:hover{
-  background-color: #babecc8c !important;
+  background-color: #5573dd8c !important;
+}
+
+.last{
+  margin-top: 15px !important;
+  color: white;
 }
 
 

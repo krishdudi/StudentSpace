@@ -8,7 +8,8 @@ import { Link, useNavigate } from "react-router-dom";
 import {
     // AiFillStar,
     AiOutlineHome,
-    AiOutlineLogout
+    AiOutlineLogout,
+    AiOutlineLogin
   } from "react-icons/ai";
 
 import {
@@ -30,6 +31,7 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
     }
     let navigate = useNavigate();
     const handleLogout = ()=>{
+      console.log('logout');
       updateExpanded(false);
       localStorage.removeItem('token');
       navigate('/login');
@@ -107,7 +109,7 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
                   to="/login"
                   onClick={() => updateExpanded(false)}
                 >
-                  <BsCalculator
+                  <AiOutlineLogin
                     style={{ marginBottom: "2px" }}
                   />{" "}
                   LogIn
@@ -116,7 +118,7 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
                 <Nav.Link
                   as={Link}
                   to="/login"
-                  onClick={() => handleLogout}
+                  onClick={handleLogout}
                 >
                   <AiOutlineLogout
                     style={{ marginBottom: "2px" }}
