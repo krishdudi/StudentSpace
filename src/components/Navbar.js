@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 // import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
     // AiFillStar,
@@ -27,6 +27,12 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
       } else {
         updateNavbar(false);
       }
+    }
+    let navigate = useNavigate();
+    const handleLogout = ()=>{
+      updateExpanded(false);
+      localStorage.removeItem('token');
+      navigate('/login');
     }
   
     window.addEventListener("scroll", scrollHandler);
@@ -95,18 +101,29 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
                   Expenses
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              {!localStorage.getItem('token')?<Nav.Item>
+              <Nav.Link
+                  as={Link}
+                  to="/login"
+                  onClick={() => updateExpanded(false)}
+                >
+                  <BsCalculator
+                    style={{ marginBottom: "2px" }}
+                  />{" "}
+                  LogIn
+                </Nav.Link>
+              </Nav.Item>:<Nav.Item>
                 <Nav.Link
                   as={Link}
-                  to="/expenses"
-                  onClick={() => updateExpanded(false)}
+                  to="/login"
+                  onClick={() => handleLogout}
                 >
                   <AiOutlineLogout
                     style={{ marginBottom: "2px" }}
                   />{" "}
                   LogOut
                 </Nav.Link>
-              </Nav.Item>
+              </Nav.Item>}
             </Nav>
           </Navbar.Collapse>
         </Container>
