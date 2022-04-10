@@ -59,6 +59,17 @@ const Signup = () => {
                     <Button type="submit" className="buton">Sign Up</Button>
 
                 </Form>
+                {loading && (
+                        <div
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                margin: "15px 0",
+                                color: "white"
+                            }}>
+                            <Spinner animation="border" />
+                    </div>
+                )}
                 <div className="last">Have an accont? <Link to="/login">Log In</Link></div>
         </div>
     </>
