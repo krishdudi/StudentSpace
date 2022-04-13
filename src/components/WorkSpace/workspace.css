@@ -1,0 +1,22 @@
+.work{
+    margin-top: 100px !important;
+    color: white;
+}
+.headd{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-btn{
+    margin-bottom: 20px;
+    margin-left: 49.5%;
+}
+
+@media (max-width: 996px) {
+    .headd{
+        flex-direction: column;
+    }
+    .add-btn{
+        margin-left: 0%;
+    }
+}

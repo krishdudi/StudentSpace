@@ -86,6 +86,11 @@ html {
     transform: rotate(-135deg) !important;
     opacity: 0.9 !important;
   }
+  @media (max-width: 1200px){
+    .navbar-nav .nav-item {
+      margin-left: 0px !important;
+    }
+  }
   
   @media (max-width: 767px) {
     .navbar {
