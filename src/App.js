@@ -9,6 +9,7 @@ import FileState from './context/files/FileState';
 import Workspace from './components/WorkSpace/Workspace';
 import Addfile from './components/AddFile/Addfile';
 import Viewfile from './components/ViewFile/Viewfile';
+import Editfile from './components/EditFile/Editfile';
 
 import {
   BrowserRouter as Router,
@@ -34,6 +35,7 @@ function App() {
         <Route path="/workspace" element={<Workspace />} />
         <Route path="/addfiles" element={<Addfile />} />
         <Route path='/view/:id' element={<Viewfile/>}/>
+        <Route path='/update/:id' element={<Editfile/>}/>
       </Routes>
     </Router>
     </FileState>

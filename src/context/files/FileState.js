@@ -65,34 +65,34 @@ const FileState = (props) => {
   };
 
   // Edit Note
-//   const editNote = async (id, title, description, tag) => {
-//      // eslint-disable-next-line
-//     const response = await fetch(`${host}api/notes/updateNote/${id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "auth-token": localStorage.getItem('token')
-//       },
+  const editFile = async (id, title, description) => {
+     // eslint-disable-next-line
+    const response = await fetch(`${BASE_URL}user/updateFile`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('token')
+      },
 
-//       body: JSON.stringify({title, description,tag}), 
-//     });
+      body: JSON.stringify({id, title, description}), 
+    });
 
-//     let newNotes = JSON.parse(JSON.stringify(notes));
-//     for (let index = 0; index < newNotes.length; index++) {
-//       const element = newNotes[index];
-//       if(element._id === id){
-//         newNotes[index].title = title;
-//         newNotes[index].description = description;
-//         newNotes[index].tag = tag;
-//         break;
-//       }
-//     }
-//     setNotes(newNotes);
-//   };
+    // let newNotes = JSON.parse(JSON.stringify(notes));
+    // for (let index = 0; index < newNotes.length; index++) {
+    //   const element = newNotes[index];
+    //   if(element._id === id){
+    //     newNotes[index].title = title;
+    //     newNotes[index].description = description;
+    //     newNotes[index].tag = tag;
+    //     break;
+    //   }
+    // }
+    // setNotes(newNotes);
+  };
 
   
   return (
-    <FileContext.Provider value={{ files, fetchNotes, addFile, deleteFile, viewFile }}>
+    <FileContext.Provider value={{ files, fetchNotes, addFile, deleteFile, viewFile, editFile }}>
       {props.children};
     </FileContext.Provider>
   );

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Card, Container, Spinner } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import fileContext from "../../context/files/fileContext";
+import './viewfile.css'
 
 const View = () => {
   const [loading, setLoading] = useState(false);
@@ -26,10 +27,10 @@ const View = () => {
           <Spinner animation="border" />
         </div>
       )}
-      <Container className="mt-15">
+      <Container className="mt-15 view-files">
         <h2 className="my-5 fw-bold text-white">View you entire created note here!</h2>
         <Card>
-          <Card.Header className="fw-bold">{noteDetails?.title}</Card.Header>
+          <Card.Header className="fw-bold my-1 ">{noteDetails?.title}</Card.Header>
           <Card.Body>
             <ReactMarkdown>{noteDetails?.description}</ReactMarkdown>
             <Card.Footer>

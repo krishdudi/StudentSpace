@@ -31,14 +31,14 @@ const Noteitems = (props) => {
               </Button>
             </Link>
 
-            {/* <Link to={`/update/${note?._id}`}> */}
+            <Link to={`/update/${note?._id}`}>
               <Button
                 variant="secondary fw-bold text-white"
                 className="ms-2 mt-2"
                 >
                 Edit
               </Button>
-            {/* </Link> */}
+            </Link>
             {/* <Link to> */}
             <Button
               variant="danger fw-bold"
@@ -50,7 +50,7 @@ const Noteitems = (props) => {
             {/* </Link> */}
             <div style={{ margin: "10px 0" }}>
               <small className="text-black">
-                Created:{" "}
+                Created At:{" "}
                 <strong className="text-black">
                     {note?.time}
                 </strong>

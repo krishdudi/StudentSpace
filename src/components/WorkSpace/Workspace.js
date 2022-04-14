@@ -27,6 +27,16 @@ const Workspace = () => {
             {/* <AddNote showAlert={props.showAlert}/> */}
             <Container className="work">
             <Row>
+            
+            <div className="headd">
+                <h2 className="fw-bold mb-4">Welcome! Your WorkSpace</h2>
+                <Link to='/addfiles'>
+                    <Button variant="primary" className="add-btn">
+                        AddFile
+                    </Button>
+                </Link>
+                
+            </div>
             {loading && (
                 <div
                 style={{
@@ -38,16 +48,6 @@ const Workspace = () => {
                 <Spinner animation="border" />
                 </div>
             )}
-            <div className="headd">
-                <h2 className="fw-bold mb-4">Welcome! Your WorkSpace</h2>
-                <Link to='/addfiles'>
-                    <Button variant="primary" className="add-btn">
-                        AddFile
-                    </Button>
-                </Link>
-                
-            </div>
-                
                 {files.length===0 ? <strong>No notes to display</strong>  : files.map((note) => {
                     return <Noteitem key={note._id} note={note} />
                 })}
