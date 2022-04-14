@@ -10,6 +10,8 @@ import Workspace from './components/WorkSpace/Workspace';
 import Addfile from './components/AddFile/Addfile';
 import Viewfile from './components/ViewFile/Viewfile';
 import Editfile from './components/EditFile/Editfile';
+import ExpenseState from './context/expense/ExpenseState';
+// import Allfiles from './components/AllFiles/Allfiles';
 
 import {
   BrowserRouter as Router,
@@ -24,20 +26,23 @@ function App() {
   return (
     <>
     <FileState>
+      <ExpenseState>
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/reminder" element={<Contests />} />
-        <Route path="/expenses" element={<Expenses />} />
+        {/* <Route path="/expenses" element={<Expenses />} /> */}
         <Route path="/workspace" element={<Workspace />} />
         <Route path="/addfiles" element={<Addfile />} />
         <Route path='/view/:id' element={<Viewfile/>}/>
         <Route path='/update/:id' element={<Editfile/>}/>
+        {/* <Route path='/allfiles' element={<Allfiles />}/> */}
       </Routes>
     </Router>
+    </ExpenseState>
     </FileState>
     </>
   );

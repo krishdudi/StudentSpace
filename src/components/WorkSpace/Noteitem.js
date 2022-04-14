@@ -3,7 +3,7 @@ import fileContext from "../../context/files/fileContext";
 import { Link } from "react-router-dom";
 import { Button, Card, Col } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import Moment from "react-moment"; 
+// import Moment from "react-moment"; 
 
 const Noteitems = (props) => {
   // const [show, setShow] = useState(false);

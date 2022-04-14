@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import FileContext from "./fileContext";
 import { BASE_URL } from "../../Api";
+// import {Spinner} from 'react-bootstrap'
 
 const FileState = (props) => {
   const filesInitial = [];
   const [files, setFiles] = useState(filesInitial);
+  // const [loading, setLoading] = useState(false);
   const fetchNotes = async () => {
     //API call
     const response = await fetch(`${BASE_URL}user/getFiles`, {
@@ -36,7 +38,7 @@ const FileState = (props) => {
 //   //Delete Note
   const deleteFile = async (id) => {
     //API call
-    console.log(id);
+    // console.log(id);
     const response = await fetch(`${BASE_URL}user/removeFile`, {
       method: "PATCH",
       headers: {
@@ -46,12 +48,13 @@ const FileState = (props) => {
       body : JSON.stringify({id})
     });
     const json = response.json();
-    console.log(json);
+    // console.log(json);
 
 
     const newNote = files.filter((note) => {
       return note._id !== id;
     });
+    alert('File deleted successfully')
     setFiles(newNote);
   };
 
@@ -77,20 +80,10 @@ const FileState = (props) => {
       body: JSON.stringify({id, title, description}), 
     });
 
-    // let newNotes = JSON.parse(JSON.stringify(notes));
-    // for (let index = 0; index < newNotes.length; index++) {
-    //   const element = newNotes[index];
-    //   if(element._id === id){
-    //     newNotes[index].title = title;
-    //     newNotes[index].description = description;
-    //     newNotes[index].tag = tag;
-    //     break;
-    //   }
-    // }
-    // setNotes(newNotes);
   };
 
   
+
   return (
     <FileContext.Provider value={{ files, fetchNotes, addFile, deleteFile, viewFile, editFile }}>
       {props.children};

@@ -21,14 +21,15 @@ const Login = () => {
         setLoading(false);
         const json = await response.json();
         // console.log(json);
-        if(json.status){
+        if(json.status === "true"){
             //save the auth token and redirect
             localStorage.setItem('token', json.token);
             // console.log(localStorage.getItem('token'));
-            history("/");
+            history("/workspace");
             // props.showAlert("Logged in successfully", "success");
         }else{
             alert('Invalid credentials');
+            history("/login");
             // props.showAlert("Invalid credentials", "danger");
         }
     }

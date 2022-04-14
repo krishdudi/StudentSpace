@@ -1,0 +1,33 @@
+.delete-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .list li:hover .delete-btn {
+    opacity: 1;
+  }
+  .list li.minus {
+    border-left: 5px solid #c0392b;
+    border-right: 5px solid #c0392b;
+    color: white;
+  }
+  .list li {
+    background-color: #332940;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+  }

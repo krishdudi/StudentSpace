@@ -32,7 +32,7 @@ const View = () => {
         <Card>
           <Card.Header className="fw-bold my-1 ">{noteDetails?.title}</Card.Header>
           <Card.Body>
-            <ReactMarkdown>{noteDetails?.description}</ReactMarkdown>
+            <ReactMarkdown className="my-4">{noteDetails?.description}</ReactMarkdown>
             <Card.Footer>
               <p>
                 Created At:{" "}

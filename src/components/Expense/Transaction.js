@@ -1,10 +1,11 @@
 import React from 'react'
+import './transaction.css'
 
 const Transaction = () => {
 
   return (
     <>
-        <li className='plus'>
+        <li className='minus'>
         <ul className='txts'>Fuel</ul>
         <ul>
           <ul id='money'>$45000</ul>

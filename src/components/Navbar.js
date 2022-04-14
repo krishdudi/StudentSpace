@@ -63,11 +63,11 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto" defaultActiveKey="#home">
-              <Nav.Item>
+              {/* <Nav.Item>
                 <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                   <AiOutlineHome style={{ marginBottom: "2px"}} /> Home
                 </Nav.Link>
-              </Nav.Item>
+              </Nav.Item> */}
   
               <Nav.Item>
                 <Nav.Link
@@ -91,7 +91,7 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
                   Reminder
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              {/* <Nav.Item>
                 <Nav.Link
                   as={Link}
                   to="/expenses"
@@ -102,7 +102,7 @@ import {BsAlarm, BsCalculator} from "react-icons/bs";
                   />{" "}
                   Expenses
                 </Nav.Link>
-              </Nav.Item>
+              </Nav.Item> */}
               {!localStorage.getItem('token')?<Nav.Item>
               <Nav.Link
                   as={Link}
